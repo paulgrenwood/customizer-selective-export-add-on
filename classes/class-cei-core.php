@@ -358,12 +358,14 @@ final class CEI_Core {
 			unset( $data['options'] );
 			
 			$typographic_mods = array_filter(
-				$data['mods'],
+				$mods,
 				function ( $key ) use ( $keys_optin__typography ){
 					return in_array( $key, $keys_optin__typography);
 				},
 				ARRAY_FILTER_USE_KEY
 			);
+			
+			$data['mods'] = $typographic_mods;
 			
 			
 /*
