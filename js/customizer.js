@@ -12,6 +12,8 @@
 	
 		_export: function($type)
 		{
+			console.log(  'export fired' );
+			console.log(  'export type = ' + $type );
 			window.location.href = CEIConfig.customizerURL + '?cei-export-type=' + $type + '&cei-export=' + CEIConfig.exportNonce;
 		},
 	
