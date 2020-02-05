@@ -357,12 +357,22 @@ final class CEI_Core {
 			
 			unset( $data['options'] );
 			
+			$typographic_mods = array_filter(
+				$data['mods'],
+				function ( $key ) use ( $keys_optin__typography ){
+					return in_array( $key, $keys_optin__typography);
+				},
+				ARRAY_FILTER_USE_KEY
+			);
 			
+			
+/*
 			foreach( $data['mods'] as $mod_key => $mod_value ){
 				if( !in_array( $mod_key, self::$keys_optin__typography ) ){
 					unset( $data['mods'][$mod_key] );
 				}
 			}
+*/
 			
 			// Set the download headers (filename).
 			header( 'Content-disposition: attachment; filename=' . $theme . '_typography-export.dat' );
