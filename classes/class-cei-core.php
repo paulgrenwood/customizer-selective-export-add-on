@@ -249,7 +249,7 @@ final class CEI_Core {
 	
 			foreach ( $option_keys as $option_key ) {
 				
-				write_log( '=== Option Key ===')
+				write_log( '=== Option Key ===');
 				write_log( $option_key );
 				write_log( get_option( $option_key ) );
 				write_log( '-----' );
