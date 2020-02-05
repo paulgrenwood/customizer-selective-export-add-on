@@ -118,7 +118,7 @@ final class CEI_Core {
 		'b42s__header_nav__line_height_mobile',
 		'b42s__header_nav__letter_spacing',
 		'b42s__header_nav__letter_spacing_medium',
-		'b42s__header_nav__letter_spacing_mobile'
+		'b42s__header_nav__letter_spacing_mobile',
 		'b42s__blockquote__font_size',
 		'b42s__blockquote__font_size_medium',
 		'b42s__blockquote__font_size_mobile',
