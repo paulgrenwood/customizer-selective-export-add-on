@@ -232,6 +232,7 @@ final class CEI_Core {
 						break;
 					}
 					
+					write_log( '=== Option Type ===' );
 					write_log( $key );
 					write_log( $setting->value() );
 					write_log( '-----' );			
@@ -247,6 +248,12 @@ final class CEI_Core {
 			$option_keys = apply_filters( 'cei_export_option_keys', array() );
 	
 			foreach ( $option_keys as $option_key ) {
+				
+				write_log( '=== Option Key ===')
+				write_log( $option_key );
+				write_log( get_option( $option_key ) );
+				write_log( '-----' );
+				
 				if(  !in_array(  $option_key, self::$keys_optout__typography ) ){
 					$data['options'][ $option_key ] = get_option( $option_key );
 				}
