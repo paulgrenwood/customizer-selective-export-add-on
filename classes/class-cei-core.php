@@ -22,43 +22,6 @@ final class CEI_Core {
 		'page_for_posts',
 	);
 	
-	static private $keys_optout__typography = array(
-		'fl-topbar-bg-color',
-		'fl-topbar-text-color',
-		'fl-topbar-link-color',
-		'fl-topbar-hover-color',
-		'fl-header-bg-color',
-		'fl-header-text-color',
-		'fl-header-link-color',
-		'fl-header-hover-color',
-		'fl-nav-bg-color',
-		'fl-nav-text-color',
-		'fl-nav-link-color',
-		'fl-nav-hover-color',
-		'fl-footer-widgets-bg-color',
-		'fl-footer-widgets-text-color',
-		'fl-footer-widgets-link-color',
-		'fl-footer-widgets-hover-color',
-		'fl-footer-bg-color',
-		'fl-footer-text-color',
-		'fl-footer-link-color',
-		'fl-footer-hover-color',
-		'nav_menu_locations',
-		'custom_css_post_id',
-		'gwstandard__intro_text__font_size',
-		'gwstandard__body_font__margin_bottom',
-		'gwstandard__intro_text__margin_bottom',
-		'gwstandard__small_text__line_height',
-		'gwstandard__small_text__margin_bottom',
-		'fl-content-width',
-		'fl-body-bg-color',
-		'fl-button-style',
-		'b42s__blockquote__color',
-		'fl-title-text-color',
-		'fl-body-text-color',
-		'fl-heading-text-color'
-	);
-	
 	/**
 	 * Load a translation for this plugin.
 	 *
@@ -202,49 +165,13 @@ final class CEI_Core {
 		
 		if( $select_type == 'typography' ){
 			
-			$data['options']['export-type'] = 'typography';
-			
-			//error_log( print_r( $mods, true ) );
-			
 			unset( $data['options'] );
-			
-			
-			foreach( $keys_optin__typography as $type_key ){
-				$data['type_mods'][$type_key] = $data['mods'][$type_key];
-			}
-			
-			unset( $data['mods'] );
 			
 			//=============
 			$keys_optin__typography=array( 'fl-body-font-size', 'fl-body-font-size_medium', 'fl-body-font-size_mobile', 'fl-body-line-height', 'fl-body-line-height_medium', 'fl-body-line-height_mobile', 'fl-body-font-family', 'fl-body-font-weight', 'b42s__body_font__margin_bottom', 'b42s__body_font__margin_bottom_medium', 'b42s__body_font__margin_bottom_mobile', 'b42s__intro_text__font_size', 'b42s__intro_text__font_size_medium', 'b42s__intro_text__font_size_mobile', 'b42s__intro_text__line_height', 'b42s__intro_text__line_height_medium', 'b42s__intro_text__line_height_mobile', 'b42s__intro_text__margin_bottom', 'b42s__intro_text__margin_bottom_medium', 'b42s__intro_text__margin_bottom_mobile', 'b42s__intro_text_alt__font_size', 'b42s__intro_text_alt__font_size_medium', 'b42s__intro_text_alt__font_size_mobile', 'b42s__intro_text_alt__line_height', 'b42s__intro_text_alt__line_height_medium', 'b42s__intro_text_alt__line_height_mobile', 'b42s__intro_text_alt__margin_bottom', 'b42s__intro_text_alt__margin_bottom_medium', 'b42s__intro_text_alt__margin_bottom_mobile', 'b42s__small_text__font_size', 'b42s__small_text__font_size_medium', 'b42s__small_text__font_size_mobile', 'b42s__small_text__line_height', 'b42s__small_text__line_height_medium', 'b42s__small_text__line_height_mobile', 'b42s__small_text__margin_bottom', 'b42s__small_text__margin_bottom_medium', 'b42s__small_text__margin_bottom_mobile', 'b42s__header_nav__font_format', 'b42s__header_nav__font_weight', 'b42s__header_nav__font_size', 'b42s__header_nav__font_size_medium', 'b42s__header_nav__font_size_mobile', 'b42s__header_nav__line_height', 'b42s__header_nav__line_height_medium', 'b42s__header_nav__line_height_mobile', 'b42s__header_nav__letter_spacing', 'b42s__header_nav__letter_spacing_medium', 'b42s__header_nav__letter_spacing_mobile', 'b42s__blockquote__font_size', 'b42s__blockquote__font_size_medium', 'b42s__blockquote__font_size_mobile', 'b42s__blockquote__line_height', 'b42s__blockquote__line_height_medium', 'b42s__blockquote__line_height_mobile', 'b42s__blockquote__margin_bottom', 'b42s__blockquote__margin_bottom_medium', 'b42s__blockquote__margin_bottom_mobile', 'fl-nav-font-family', 'fl-nav-font-weight', 'fl-nav-font-format', 'fl-nav-font-size', 'fl-heading-style', 'fl-title-font-family', 'fl-title-font-weight', 'fl-title-font-format', 'fl-heading-font-family', 'fl-heading-font-weight', 'fl-heading-font-format', 'fl-h1-font-size', 'fl-h1-font-size_medium', 'fl-h1-font-size_mobile', 'fl-h1-line-height', 'fl-h1-line-height_medium', 'fl-h1-line-height_mobile', 'fl-h1-letter-spacing', 'fl-h1-letter-spacing_medium', 'fl-h1-letter-spacing_mobile', 'fl-h2-font-size', 'fl-h2-font-size_medium', 'fl-h2-font-size_mobile', 'fl-h2-line-height', 'fl-h2-line-height_medium', 'fl-h2-line-height_mobile', 'fl-h2-letter-spacing', 'fl-h2-letter-spacing_medium', 'fl-h2-letter-spacing_mobile', 'b42s__h2__font_weight', 'b42s__h2__font_format', 'fl-h3-font-size', 'fl-h3-font-size_medium', 'fl-h3-font-size_mobile', 'fl-h3-line-height', 'fl-h3-line-height_medium', 'fl-h3-line-height_mobile', 'fl-h3-letter-spacing', 'fl-h3-letter-spacing_medium', 'fl-h3-letter-spacing_mobile', 'b42s__h3__font_weight', 'b42s__h4__font_format', 'fl-h4-font-size', 'fl-h4-font-size_medium', 'fl-h4-font-size_mobile', 'fl-h4-line-height', 'fl-h4-line-height_medium', 'fl-h4-line-height_mobile', 'fl-h4-letter-spacing', 'fl-h4-letter-spacing_medium', 'fl-h4-letter-spacing_mobile', 'b42s__h4__font_weight', 'b42s__h4__font_format', 'fl-h5-font-size', 'fl-h5-font-size_medium', 'fl-h5-font-size_mobile', 'fl-h5-line-height', 'fl-h5-line-height_medium', 'fl-h5-line-height_mobile', 'fl-h5-letter-spacing', 'fl-h5-letter-spacing_medium', 'fl-h5-letter-spacing_mobile', 'b42s__h5__font_weight', 'b42s__h5__font_format', 'fl-h6-font-size', 'fl-h6-font-size_medium', 'fl-h6-font-size_mobile', 'fl-h6-line-height', 'fl-h6-line-height_medium', 'fl-h6-line-height_mobile', 'fl-h6-letter-spacing', 'fl-h6-letter-spacing_medium', 'fl-h6-letter-spacing_mobile', 'b42s__h6__font_weight', 'b42s__h6__font_format', 'fl-button-font-family', 'fl-button-font-weight', 'fl-button-font-size', 'fl-button-line-height', 'fl-button-text-transform', );
 			//=============
 			
 			$data['mods'] = array_intersect_key( $mods, array_flip( $keys_optin__typography ) );
-			
-			
-			/*$typographic_mods = array_filter(
-				$mods,
-				function ( $key ) use ( $keys_optin__typography ){
-					return in_array( $key, $keys_optin__typography);
-				},
-				ARRAY_FILTER_USE_KEY
-			);
-			
-			
-			
-			
-			$data['mods'] = $typographic_mods;*/
-			//asdf
-			//$data = array_intersect_key($mods, self::$keys_optin__typography);
-			
-			
-/*
-			foreach( $data['mods'] as $mod_key => $mod_value ){
-				if( !in_array( $mod_key, self::$keys_optin__typography ) ){
-					unset( $data['mods'][$mod_key] );
-				}
-			}
-*/
 			
 			// Set the download headers (filename).
 			header( 'Content-disposition: attachment; filename=' . $theme . '_typography-export.dat' );
