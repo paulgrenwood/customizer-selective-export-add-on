@@ -249,10 +249,10 @@ final class CEI_Core {
 	
 			foreach ( $option_keys as $option_key ) {
 				
-				write_log( '=== Option Key ===');
-				write_log( $option_key );
-				write_log( get_option( $option_key ) );
-				write_log( '-----' );
+				error_log( '=== Option Key ===');
+				error_log( print_r( $option_key, true ) );
+				error_log( print_r( get_option( $option_key ), true ) );
+				error_log( '-----' );
 				
 				if(  !in_array(  $option_key, self::$keys_optout__typography ) ){
 					$data['options'][ $option_key ] = get_option( $option_key );
