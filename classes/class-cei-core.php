@@ -62,7 +62,10 @@ final class CEI_Core {
 		'gwstandard__small_text__margin_bottom',
 		'fl-content-width',
 		'fl-body-bg-color',
-		'fl-button-style'
+		'fl-button-style',
+		'b42s__blockquote__color',
+		'fl-title-text-color',
+		'fl-body-text-color',
 	);
 	
 	static private $keys_optin__typography = array(
