@@ -201,6 +201,7 @@ final class CEI_Core {
 		
 		if( $select_type == 'typography' ){
 			
+			$data['options']['export-type'] = 'typography';
 			
 			foreach( $settings as $key => $setting ){
 				
@@ -231,12 +232,24 @@ final class CEI_Core {
 				}
 			}
 			
+			// Plugin developers can specify additional option keys to export.
+			$option_keys = apply_filters( 'cei_export_option_keys', array() );
+	
+			foreach ( $option_keys as $option_key ) {
+				$data['options'][ $option_key ] = get_option( $option_key );
+			}
+	
+			if( function_exists( 'wp_get_custom_css_post' ) ) {
+				$data['wp_css'] = wp_get_custom_css();
+			}
+			
 			// Set the download headers (filename).
 			header( 'Content-disposition: attachment; filename=' . $theme . '_typography-export.dat' );
 			
 			
 		}else if( $select_type == 'all' ){
 			
+			$data['options']['export-type'] = 'all';
 			
 			foreach ( $settings as $key => $setting ) {
 
