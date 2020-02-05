@@ -4,8 +4,8 @@
 <span class="description customize-control-description">
 	<?php _e( 'Click the button below to export the customization settings for this theme.', 'customizer-export-import' ); ?>
 </span>
-<input type="button" class="button" name="cei-export-typography-button" value="<?php esc_attr_e( 'Export Typography', 'customizer-export-import' ); ?>" /><br/>
-<input type="button" class="button" name="cei-export-button" value="<?php esc_attr_e( 'Full Export', 'customizer-export-import' ); ?>" />
+<p><input type="button" class="button" name="cei-export-typography-button" value="<?php esc_attr_e( 'Export Typography', 'customizer-export-import' ); ?>" /></p>
+<p><input type="button" class="button" name="cei-export-button" value="<?php esc_attr_e( 'Full Export', 'customizer-export-import' ); ?>" /></p>
 
 <hr class="cei-hr" />
 
