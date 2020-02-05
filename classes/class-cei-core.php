@@ -232,14 +232,18 @@ final class CEI_Core {
 						break;
 					}
 					
+					if( 'mods' === substr( strtolower( $key ), 0, 4 ) ) {
+						break;
+					}
+					
 					write_log( '=== Option Type ===' );
 					write_log( $key );
 					write_log( $setting->value() );
 					write_log( '-----' );			
 										
-					if( !in_array( $key, self::$keys_optout__typography ) ){
+					//if( !in_array( $key, self::$keys_optout__typography ) ){
 						$data['options'][ $key ] = $setting->value();
-					}
+					//}
 
 				}
 			}
@@ -249,12 +253,13 @@ final class CEI_Core {
 	
 			foreach ( $option_keys as $option_key ) {
 				
-				error_log( var_dump( $option_key ) );
-				var_dump( $option_key );
-				
-				if(  !in_array(  $option_key, self::$keys_optout__typography ) ){
-					$data['options'][ $option_key ] = get_option( $option_key );
+				if( 'mods' === substr( strtolower( $option_key ), 0, 4 ) ) {
+					break;
 				}
+				
+				//if(  !in_array(  $option_key, self::$keys_optout__typography ) ){
+					$data['options'][ $option_key ] = get_option( $option_key );
+				//}
 			}
 	
 			if( function_exists( 'wp_get_custom_css_post' ) ) {
