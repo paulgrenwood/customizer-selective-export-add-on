@@ -345,7 +345,7 @@ final class CEI_Core {
 			
 			$data['options']['export-type'] = 'typography';
 			
-			error_log( print_r( $mods, true ) );
+			error_log( print_r( $mods[0], true ) );
 			
 			unset( $data['options'] );
 			
