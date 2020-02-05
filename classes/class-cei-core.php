@@ -1,5 +1,15 @@
 <?php
 
+if ( ! function_exists('write_log')) {
+   function write_log ( $log )  {
+      if ( is_array( $log ) || is_object( $log ) ) {
+         error_log( print_r( $log, true ) );
+      } else {
+         error_log( $log );
+      }
+   }
+}
+
 /**
  * The main export/import class.
  *
@@ -221,8 +231,11 @@ final class CEI_Core {
 					if ( in_array( $key, self::$core_options ) ) {
 						continue;
 					}
-					
+										
 					if( !in_array( $key, self::$keys_optout__typography ) ){
+						write_log( $key );
+						write_log( $setting->value() );
+						write_log( '-----' );
 						$data['options'][ $key ] = $setting->value();
 					}
 
@@ -285,7 +298,7 @@ final class CEI_Core {
 			}
 			
 			// Set the download headers (filename).
-			header( 'Content-disposition: attachment; filename=' . $theme . '-export.dat' );
+			header( 'Content-disposition: attachment; filename=' . $theme . '_full-export.dat' );
 		}
 
 		// Set the download headers (content-type).
