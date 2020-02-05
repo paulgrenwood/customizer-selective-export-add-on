@@ -345,9 +345,13 @@ final class CEI_Core {
 			
 			$data['options']['export-type'] = 'typography';
 			
-			error_log( print_r( $mods, true ) );
+			//error_log( print_r( $mods, true ) );
 			
 			unset( $data['options'] );
+			
+			foreach( $keys_optin__typography as $type_key ){
+				$data['type_mods'][$type_key] = $mods[$type_key];
+			}
 			
 			/*$typographic_mods = array_filter(
 				$mods,
@@ -360,7 +364,7 @@ final class CEI_Core {
 			
 			$data['mods'] = $typographic_mods;*/
 			//asdf
-			$data = array_intersect_key($mods[0], self::$keys_optin__typography);
+			//$data = array_intersect_key($mods, self::$keys_optin__typography);
 			
 			
 /*
