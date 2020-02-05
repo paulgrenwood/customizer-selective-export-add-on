@@ -349,9 +349,12 @@ final class CEI_Core {
 			
 			unset( $data['options'] );
 			
+			
 			foreach( $keys_optin__typography as $type_key ){
-				$data['type_mods'][$type_key] = $mods[$type_key];
+				$data['type_mods'][$type_key] = $data['mods'][$type_key];
 			}
+			
+			unset( $data['mods'] );
 			
 			/*$typographic_mods = array_filter(
 				$mods,
