@@ -23,6 +23,11 @@ final class CEI_Core {
 	);
 	
 	static private $keys_optout__typography = array(
+		'fl-topbar-bg-color'
+	);
+	
+/*
+	static private $keys_optout__typography = array(
 		'fl-topbar-bg-color',
 		'fl-topbar-text-color',
 		'fl-topbar-link-color',
@@ -54,6 +59,7 @@ final class CEI_Core {
 		'fl-body-bg-color',
 		'fl-button-style'
 	);
+*/
 	
 	static private $keys_optin__typography = array(
 	);
@@ -217,12 +223,10 @@ final class CEI_Core {
 						continue;
 					}
 					
-/*
 					// Don't save values in $keys_optout__typography array.
 					if ( in_array( $key, self::$keys_optout__typography ) ){
 						continue;
 					}
-*/
 					
 					// Don't save core options.
 					if ( in_array( $key, self::$core_options ) ) {
@@ -230,7 +234,7 @@ final class CEI_Core {
 					}
 					
 					$data['options'][ $key ] = $setting->value();
-				
+
 				}
 			}
 			
