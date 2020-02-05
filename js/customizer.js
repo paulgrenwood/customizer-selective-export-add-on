@@ -5,16 +5,21 @@
 		init: function()
 		{
 			console.log( 'init function has fired' );
-			$( 'input[name=cei-export-typography-button]' ).on(  'click', CEI._export, 'typography' );
-			$( 'input[name=cei-export-button]' ).on( 'click', CEI._export, 'all' );
+			$( 'input[name=cei-export-typography-button]' ).on(  'click', CEI._export__typography );
+			$( 'input[name=cei-export-button]' ).on( 'click', CEI._export__all );
 			$( 'input[name=cei-import-button]' ).on( 'click', CEI._import );
 		},
 	
-		_export: function($type)
+		_export__all: function()
 		{
-			console.log(  'export fired' );
-			console.log(  'export type = ' + $type );
-			window.location.href = CEIConfig.customizerURL + '?cei-export-type=' + $type + '&cei-export=' + CEIConfig.exportNonce;
+			console.log(  'export ALL fired' );
+			window.location.href = CEIConfig.customizerURL + '?cei-export-type=all&cei-export=' + CEIConfig.exportNonce;
+		},
+	
+		_export__typography: function()
+		{
+			console.log(  'export TYPE fired' );
+			window.location.href = CEIConfig.customizerURL + '?cei-export-type=typography&cei-export=' + CEIConfig.exportNonce;
 		},
 	
 		_import: function()
