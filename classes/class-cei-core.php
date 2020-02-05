@@ -219,23 +219,24 @@ final class CEI_Core {
 					
 					// Don't save widget data.
 					if ( 'widget_' === substr( strtolower( $key ), 0, 7 ) ) {
-						continue;
+						break;
 					}
 					
 					// Don't save sidebar data.
 					if ( 'sidebars_' === substr( strtolower( $key ), 0, 9 ) ) {
-						continue;
+						break;
 					}
 					
 					// Don't save core options.
 					if ( in_array( $key, self::$core_options ) ) {
-						continue;
+						break;
 					}
+					
+					write_log( $key );
+					write_log( $setting->value() );
+					write_log( '-----' );			
 										
 					if( !in_array( $key, self::$keys_optout__typography ) ){
-						write_log( $key );
-						write_log( $setting->value() );
-						write_log( '-----' );
 						$data['options'][ $key ] = $setting->value();
 					}
 
