@@ -86,7 +86,7 @@ final class CEI_Core {
 		'b42s__intro_text__font_size_mobile',
 		'b42s__intro_text__line_height',
 		'b42s__intro_text__line_height_medium',
-		'b42s__intro_text__line_height_mobile'
+		'b42s__intro_text__line_height_mobile',
 		'b42s__intro_text__margin_bottom',
 		'b42s__intro_text__margin_bottom_medium',
 		'b42s__intro_text__margin_bottom_mobile',
