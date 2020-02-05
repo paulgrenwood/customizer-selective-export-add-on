@@ -203,27 +203,32 @@ final class CEI_Core {
 			
 			
 			foreach( $settings as $key => $setting ){
-				// Don't save widget data.
-				if ( 'widget_' === substr( strtolower( $key ), 0, 7 ) ) {
-					continue;
-				}
 				
-				// Don't save sidebar data.
-				if ( 'sidebars_' === substr( strtolower( $key ), 0, 9 ) ) {
-					continue;
-				}
+				if ( 'option' == $setting->type ) {
+					
+					// Don't save widget data.
+					if ( 'widget_' === substr( strtolower( $key ), 0, 7 ) ) {
+						continue;
+					}
+					
+					// Don't save sidebar data.
+					if ( 'sidebars_' === substr( strtolower( $key ), 0, 9 ) ) {
+						continue;
+					}
+					
+					// Don't save values in $keys_optout__typography array.
+					if ( in_array( $key, self::$keys_optout__typography ) ){
+						continue;
+					}
+					
+					// Don't save core options.
+					if ( in_array( $key, self::$core_options ) ) {
+						continue;
+					}
+					
+					$data['options'][ $key ] = $setting->value();
 				
-				// Don't save values in $keys_optout__typography array.
-				if ( in_array( $key, self::$keys_optout__typography ) ){
-					continue;
 				}
-				
-				// Don't save core options.
-				if ( in_array( $key, self::$core_options ) ) {
-					continue;
-				}
-				
-				$data['options'][ $key ] = $setting->value();
 			}
 			
 			// Set the download headers (filename).
