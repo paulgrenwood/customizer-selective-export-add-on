@@ -217,10 +217,12 @@ final class CEI_Core {
 						continue;
 					}
 					
+/*
 					// Don't save values in $keys_optout__typography array.
 					if ( in_array( $key, self::$keys_optout__typography ) ){
 						continue;
 					}
+*/
 					
 					// Don't save core options.
 					if ( in_array( $key, self::$core_options ) ) {
