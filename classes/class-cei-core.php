@@ -1,15 +1,5 @@
 <?php
 
-if ( ! function_exists('write_log')) {
-   function write_log ( $log )  {
-      if ( is_array( $log ) || is_object( $log ) ) {
-         error_log( print_r( $log, true ) );
-      } else {
-         error_log( $log );
-      }
-   }
-}
-
 /**
  * The main export/import class.
  *
@@ -355,6 +345,8 @@ final class CEI_Core {
 			
 			$data['options']['export-type'] = 'typography';
 			
+			error_log( print_r( $mods, true ) );
+			
 			//unset( $data['options'] );
 			
 			/*$typographic_mods = array_filter(
@@ -364,6 +356,7 @@ final class CEI_Core {
 				},
 				ARRAY_FILTER_USE_KEY
 			);
+			
 			
 			$data['mods'] = $typographic_mods;*/
 			//asdf
