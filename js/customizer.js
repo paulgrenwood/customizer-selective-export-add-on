@@ -4,6 +4,7 @@
 	
 		init: function()
 		{
+			console.log( 'init function has fired' );
 			$( 'input[name=cei-export-typography-button]' ).on(  'click', CEI._export, 'typography' );
 			$( 'input[name=cei-export-button]' ).on( 'click', CEI._export, 'all' );
 			$( 'input[name=cei-import-button]' ).on( 'click', CEI._import );
