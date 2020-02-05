@@ -360,7 +360,7 @@ final class CEI_Core {
 			
 			$data['mods'] = $typographic_mods;*/
 			//asdf
-			$data['mods'] = array_intersect_key($mods, self::$keys_optin__typography);
+			$data['mods'] = array_intersect_key($mods[0], self::$keys_optin__typography);
 			
 			
 /*
