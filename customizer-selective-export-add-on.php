@@ -3,7 +3,7 @@
  * Plugin Name: Customizer Selective Export Add-on
  * Plugin URI: https://github.com/paulgrenwood/customizer-selective-export-add-on
  * Description: Selective Export Add-on for Customizer Export/Import Plugin: http://www.wpbeaverbuilder.com/wordpress-customizer-export-import-plugin/?utm_source=external&utm_medium=customizer-export&utm_campaign=plugins-page
- * Version: 0.1.13
+ * Version: 0.1.14
  * Author: Paul Grenwood
  * Author URI: https://thegrenwoods.com
  * License: GNU General Public License v2.0
