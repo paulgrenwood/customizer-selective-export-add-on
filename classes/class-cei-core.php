@@ -213,57 +213,13 @@ final class CEI_Core {
 			
 			$data['options']['export-type'] = 'typography';
 			
-			foreach( $settings as $key => $setting ){
-				
-				if ( 'option' == $setting->type ) {
-					
-					// Don't save widget data.
-					if ( 'widget_' === substr( strtolower( $key ), 0, 7 ) ) {
-						break;
-					}
-					
-					// Don't save sidebar data.
-					if ( 'sidebars_' === substr( strtolower( $key ), 0, 9 ) ) {
-						break;
-					}
-					
-					// Don't save core options.
-					if ( in_array( $key, self::$core_options ) ) {
-						break;
-					}
-					
-					if( 'mods' === substr( strtolower( $key ), 0, 4 ) ) {
-						break;
-					}
-					
-					write_log( '=== Option Type ===' );
-					write_log( $key );
-					write_log( $setting->value() );
-					write_log( '-----' );			
-										
-					//if( !in_array( $key, self::$keys_optout__typography ) ){
-						$data['options'][ $key ] = $setting->value();
-					//}
-
-				}
-			}
+			unset( $data['options'] );
 			
-			// Plugin developers can specify additional option keys to export.
-			$option_keys = apply_filters( 'cei_export_option_keys', array() );
-	
-			foreach ( $option_keys as $option_key ) {
-				
-				if( 'mods' === substr( strtolower( $option_key ), 0, 4 ) ) {
-					break;
+			
+			foreach( $data['mods'] as $mod_key => $mod_value ){
+				if( in_array( $mod_key, self::$keys_optout__typography ) ){
+					unset( $data['mods'][$mod_key] );
 				}
-				
-				//if(  !in_array(  $option_key, self::$keys_optout__typography ) ){
-					$data['options'][ $option_key ] = get_option( $option_key );
-				//}
-			}
-	
-			if( function_exists( 'wp_get_custom_css_post' ) ) {
-				$data['wp_css'] = wp_get_custom_css();
 			}
 			
 			// Set the download headers (filename).
