@@ -40,6 +40,10 @@ Full List of Included Typographic Export Mods
 'b42s__intro_text__margin_bottom_medium',
 'b42s__intro_text__margin_bottom_mobile',
 
+//• Font Style
+'b42s__intro_text__font_style',
+
+
 //== INTRO TEXT ALT ===
 //• Font Size
 'b42s__intro_text_alt__font_size',
@@ -55,6 +59,9 @@ Full List of Included Typographic Export Mods
 'b42s__intro_text_alt__margin_bottom',
 'b42s__intro_text_alt__margin_bottom_medium',
 'b42s__intro_text_alt__margin_bottom_mobile',
+
+//• Font Style
+'b42s__intro_text_alt__font_style',
 
 
 //=== SMALL TEXT ===
